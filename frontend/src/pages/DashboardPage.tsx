@@ -9,12 +9,13 @@ const DashboardPage: React.FC = () => {
     return (
         <div className="dashboard-page">
             <div className="dashboard-header">
-                {/* <h1>Welcome, {user?.name}!</h1>
-                <p className="subtitle">Manage your finances securely with blockchain</p> */}
+            <h1 style={{ fontSize: "2.5rem", marginTop: "2rem", marginBottom: "5rem", padding: "1rem 1rem", }}>
+                   
+                </h1>
             </div>
 
             <div className="dashboard-content">
-                 {/* Display blockchain-related stats */}
+                {/* Display blockchain-related stats */}
                 <TransactionManager /> {/* Manage transactions */}
             </div>
         </div>
