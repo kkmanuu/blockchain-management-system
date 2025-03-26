@@ -25,10 +25,10 @@ const HelpAndSupport: React.FC = () => {
                         <h3 style={styles.faqQuestion}>How do I contact support?</h3>
                         <p style={styles.faqAnswer}>
                             You can contact our support team by emailing{" "}
-                            <a href="mailto:support@blockchainfinance.com" style={styles.link}>
-                                support@blockchainfinance.com
+                            <a href="mailto:Deechep12@gmail.com" style={styles.link}>
+                            Deechep12@gmail.com
                             </a>{" "}
-                            or calling +1 (123) 456-7890.
+                            or calling + (254) 254725127089.
                         </p>
                     </div>
                     <div style={styles.faqItem}>
@@ -54,14 +54,14 @@ const HelpAndSupport: React.FC = () => {
                         <h3 style={styles.contactMethodHeading}>Email Support</h3>
                         <p>
                             Email us at:{" "}
-                            <a href="mailto:support@blockchainfinance.com" style={styles.link}>
-                                support@blockchainfinance.com
+                            <a href="mailto:Deechep12@gmail.com" style={styles.link}>
+                                Deechep12@gmail.com
                             </a>
                         </p>
                     </div>
                     <div style={styles.contactMethod}>
                         <h3 style={styles.contactMethodHeading}>Phone Support</h3>
-                        <p>Call us at: +1 (123) 456-7890</p>
+                        <p>Call us at: + (254) 725127089</p>
                     </div>
                     <div style={styles.contactMethod}>
                         <h3 style={styles.contactMethodHeading}>Live Chat</h3>
@@ -107,9 +107,13 @@ const styles = {
         fontFamily: "Arial, sans-serif",
     },
     heading: {
-        fontSize: "2.5rem",
+        fontSize: "2.1rem",
         color: "#2c3e50",
-        marginBottom: "1rem",
+        display : "flex",
+        padding: "2rem 1rem",
+        justifyContent: "center",
+        marginBottom: "2rem",
+        bagroundColor: "#3498db",
     },
     subheading: {
         fontSize: "1.2rem",
@@ -117,12 +121,12 @@ const styles = {
         marginBottom: "2rem",
     },
     section: {
-        marginBottom: "2rem",
+        marginBottom: "5rem",
     },
     sectionHeading: {
         fontSize: "2rem",
         color: "#2c3e50",
-        marginBottom: "1rem",
+        marginBottom: "4rem",
     },
     faqContainer: {
         display: "flex",
