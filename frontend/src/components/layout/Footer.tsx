@@ -73,9 +73,10 @@ const Footer: React.FC = () => {
                 <div style={{ flex: 1, minWidth: "200px" }}>
                     <h3 style={{ fontSize: "1.25rem", marginBottom: "1rem" }}>Contact Us</h3>
                     <p style={{ fontSize: "0.9rem", lineHeight: "1.6" }}>
-                        Email: supportDee@blockchainfinance.com
+                        Email: Deechep12@gmail.com
+
                         <br />
-                        Phone: +1 (123) 456-7890
+                        Phone: + (254) 725127089
                         <br />
                         Address: 1001 Nairobi, Kenya
                     </p>
@@ -115,14 +116,7 @@ const Footer: React.FC = () => {
                         >
                             <i className="fab fa-linkedin" style={{ fontSize: "1.5rem" }}></i>
                         </a>
-                        <a
-                            href="https://github.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "white", textDecoration: "none" }}
-                        >
-                            <i className="fab fa-github" style={{ fontSize: "1.5rem" }}></i>
-                        </a>
+                       
                     </div>
                 </div>
             </div>
