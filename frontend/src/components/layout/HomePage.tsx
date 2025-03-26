@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
                 }}
             >
                 {/* Personalized Welcome Message */}
-                <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>
+                <h1 style={{ fontSize: "2.5rem", marginBottom: "3rem" , padding: "1rem 1rem",}}>
                     Welcome, {user?.name || "User"}!
                 </h1>
                 <p style={{ fontSize: "1.2rem", marginBottom: "2rem" }}>
