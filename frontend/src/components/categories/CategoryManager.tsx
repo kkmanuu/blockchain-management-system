@@ -98,7 +98,7 @@ export const CategoryManager: React.FC = () => {
         <h1>{editingCategory ? "Edit Category" : "Add Category"}</h1>
         {error && <div className="error-message">{error}</div>}
       </div>
-  
+
       {/* Form Section */}
       <div className="form-section">
         <CategoryForm
@@ -115,7 +115,7 @@ export const CategoryManager: React.FC = () => {
           </button>
         )}
       </div>
-  
+
       {/* Categories List Section */}
       <div className="categories-section">
         <h2>Categories</h2>
