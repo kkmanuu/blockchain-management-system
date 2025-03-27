@@ -93,31 +93,39 @@ export const CategoryManager: React.FC = () => {
 
   return (
     <div className="category-manager">
-      <h2 className="p-4 text-2xl font-semibold, flex justify-center, display: flex, align-items: center">
-        {editingCategory ? "Edit Category" : "Add Category"}
-      </h2>
-
-      {error && <div className="error-message">{error}</div>}
-      <CategoryForm
-        onSubmit={handleSubmit}
-        initialCategory={editingCategory || undefined}
-        isLoading={createMutation.isLoading || updateMutation.isLoading}
-      />
-      {editingCategory && (
-        <button
-          onClick={() => setEditingCategory(null)}
-          className="cancel-button"
-        >
-          Cancel Editing
-        </button>
-      )}
-      <h2>Categories</h2>
-      <CategoryList
-        categories={categories}
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-        isLoading={isLoading || deleteMutation.isLoading}
-      />
+      {/* Header Section */}
+      <div className="header-section">
+        <h1>{editingCategory ? "Edit Category" : "Add Category"}</h1>
+        {error && <div className="error-message">{error}</div>}
+      </div>
+  
+      {/* Form Section */}
+      <div className="form-section">
+        <CategoryForm
+          onSubmit={handleSubmit}
+          initialCategory={editingCategory || undefined}
+          isLoading={createMutation.isLoading || updateMutation.isLoading}
+        />
+        {editingCategory && (
+          <button
+            onClick={() => setEditingCategory(null)}
+            className="cancel-button"
+          >
+            Cancel Editing
+          </button>
+        )}
+      </div>
+  
+      {/* Categories List Section */}
+      <div className="categories-section">
+        <h2>Categories</h2>
+        <CategoryList
+          categories={categories}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+          isLoading={isLoading || deleteMutation.isLoading}
+        />
+      </div>
     </div>
   );
 };
