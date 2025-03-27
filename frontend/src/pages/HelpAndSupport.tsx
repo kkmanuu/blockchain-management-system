@@ -101,7 +101,7 @@ const HelpAndSupport: React.FC = () => {
 // Inline styles
 const styles = {
     container: {
-        maxWidth: "1200px",
+        maxWidth: "120rem",
         margin: "0 auto",
         padding: "2rem 1rem",
         fontFamily: "Arial, sans-serif",
