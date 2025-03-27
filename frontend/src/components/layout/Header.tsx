@@ -59,6 +59,7 @@ export const Header: React.FC = () => {
                 top: 0,
                 zIndex: 1000,
                 display: "flex",
+                // backgroundColor:"black",
                 justifyContent: "space-between", // Space between left and right content
                 alignItems: "center", // Center items vertically
             }}
