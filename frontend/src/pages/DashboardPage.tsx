@@ -9,7 +9,7 @@ const DashboardPage: React.FC = () => {
     return (
         <div className="dashboard-page">
             <div className="dashboard-header">
-            <h1 style={{ fontSize: "2.5rem", marginTop: "2rem", marginBottom: "5rem", padding: "1rem 1rem", }}>
+            <h1 style={{ fontSize: "2.5rem", marginTop: "2rem", marginBottom: "5rem", padding: "1rem 1rem" }}>
                    
                 </h1>
             </div>
