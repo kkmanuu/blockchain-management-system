@@ -5,22 +5,19 @@ const CategoriesPage: React.FC = () => {
   return (
     <div className="categories-page">
       <div className="categories-header">
-        <h1
+
+        <div 
+          className="subtitle"
           style={{
-            fontSize: "2.5rem",
-            marginTop: "2rem",
-            marginBottom: "5rem",
-            padding: "1rem 1rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             color: "white",
+            marginBottom: "2rem",
+            fontSize: "1.2rem", 
+            padding: "4rem 3rem",
           }}
         >
-          Manage Categories
-        </h1>
-
-        <div className="subtitle">
           Create and manage your income and expense categories
         </div>
       </div>
