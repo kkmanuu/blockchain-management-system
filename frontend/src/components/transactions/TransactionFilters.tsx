@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 interface TransactionFiltersProps {
+    // Function to update filter values in the parent component
     onFilterChange: (filters: {
         filter: string;
         sort: string;
@@ -8,6 +9,8 @@ interface TransactionFiltersProps {
         startDate?: string;
         endDate?: string;
     }) => void;
+
+    // Optional loading state to disable inputs while processing
     isLoading?: boolean;
 }
 
@@ -15,28 +18,33 @@ export const TransactionFilters: React.FC<TransactionFiltersProps> = ({
     onFilterChange,
     isLoading = false,
 }) => {
-    const [filter, setFilter] = useState("all");
-    const [sort, setSort] = useState("date");
-    const [order, setOrder] = useState("desc");
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("");
+    // State variables for filter values
+    const [filter, setFilter] = useState("all"); // Filter type (all, income, expense)
+    const [sort, setSort] = useState("date"); // Sorting option (date, amount)
+    const [order, setOrder] = useState("desc"); // Order of sorting (asc, desc)
+    const [startDate, setStartDate] = useState(""); // Start date for filtering
+    const [endDate, setEndDate] = useState(""); // End date for filtering
 
+    // Function to apply filters by calling the parent function with the selected values
     const handleApplyFilters = () => {
         onFilterChange({
             filter,
             sort,
             order,
-            startDate: startDate || undefined,
-            endDate: endDate || undefined,
+            startDate: startDate || undefined, // Avoid sending empty string
+            endDate: endDate || undefined, // Avoid sending empty string
         });
     };
 
+    // Function to reset all filter values to default
     const handleReset = () => {
         setFilter("all");
         setSort("date");
         setOrder("desc");
         setStartDate("");
         setEndDate("");
+
+        // Notify parent component of the reset filters
         onFilterChange({
             filter: "all",
             sort: "date",
@@ -47,6 +55,7 @@ export const TransactionFilters: React.FC<TransactionFiltersProps> = ({
     return (
         <div className="transaction-filters">
             <div className="filters-row">
+                {/* Dropdown for selecting transaction type */}
                 <div className="filter-group">
                     <label htmlFor="filter">Type</label>
                     <select
@@ -61,6 +70,7 @@ export const TransactionFilters: React.FC<TransactionFiltersProps> = ({
                     </select>
                 </div>
 
+                {/* Dropdown for selecting sorting criteria */}
                 <div className="filter-group">
                     <label htmlFor="sort">Sort By</label>
                     <select
@@ -74,6 +84,7 @@ export const TransactionFilters: React.FC<TransactionFiltersProps> = ({
                     </select>
                 </div>
 
+                {/* Dropdown for selecting sorting order */}
                 <div className="filter-group">
                     <label htmlFor="order">Order</label>
                     <select
@@ -89,6 +100,7 @@ export const TransactionFilters: React.FC<TransactionFiltersProps> = ({
             </div>
 
             <div className="filters-row">
+                {/* Input field for selecting start date */}
                 <div className="filter-group">
                     <label htmlFor="startDate">Start Date</label>
                     <input
@@ -100,6 +112,7 @@ export const TransactionFilters: React.FC<TransactionFiltersProps> = ({
                     />
                 </div>
 
+                {/* Input field for selecting end date */}
                 <div className="filter-group">
                     <label htmlFor="endDate">End Date</label>
                     <input
@@ -108,10 +121,11 @@ export const TransactionFilters: React.FC<TransactionFiltersProps> = ({
                         value={endDate}
                         onChange={(e) => setEndDate(e.target.value)}
                         disabled={isLoading}
-                        min={startDate}
+                        min={startDate} // Prevents selecting an end date earlier than start date
                     />
                 </div>
 
+                {/* Buttons to apply or reset filters */}
                 <div className="filter-actions">
                     <button
                         onClick={handleApplyFilters}
