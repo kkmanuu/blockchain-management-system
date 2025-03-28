@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Category } from "../../types";
 
 interface TransactionFormProps {
-    categories: Category[];
+    categories: Category[]; // List of available categories for transactions
     onSubmit: (values: {
-        type: "income" | "expense";
-        category: string;
-        amount: number;
-        date: string;
-        description?: string;
+        type: "income" | "expense"; // Type of transaction
+        category: string; // Selected category ID
+        amount: number; // Transaction amount
+        date: string; // Date of the transaction
+        description?: string; // Optional description
     }) => void;
-    isLoading?: boolean;
+    isLoading?: boolean; // Boolean flag to disable inputs when processing
 }
 
 export const TransactionForm: React.FC<TransactionFormProps> = ({
@@ -18,28 +18,32 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
     onSubmit,
     isLoading = false,
 }) => {
+    // State for form fields
     const [type, setType] = useState<"income" | "expense">("expense");
     const [category, setCategory] = useState("");
     const [amount, setAmount] = useState("");
-    const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+    const [date, setDate] = useState(new Date().toISOString().split("T")[0]); // Default to today's date
     const [description, setDescription] = useState("");
 
+    // Handles form submission
     const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevents default form submission behavior
+
         onSubmit({
             type,
             category,
-            amount: parseFloat(amount),
+            amount: parseFloat(amount), // Converts amount string to number
             date,
-            description: description.trim() || undefined,
+            description: description.trim() || undefined, // Trim empty spaces from description
         });
 
-        // Reset form
+        // Reset form fields after submission
         setAmount("");
         setDescription("");
         setDate(new Date().toISOString().split("T")[0]);
     };
 
+    // Filters categories based on selected transaction type
     const filteredCategories = categories.filter(
         (cat) => cat.type === type || cat.type === "any"
     );
@@ -47,6 +51,7 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
     return (
         <form onSubmit={handleSubmit} className="transaction-form">
             <div className="form-row">
+                {/* Transaction Type Selection */}
                 <div className="form-group">
                     <label htmlFor="type">Type</label>
                     <select
@@ -63,6 +68,7 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
                     </select>
                 </div>
 
+                {/* Category Selection */}
                 <div className="form-group">
                     <label htmlFor="category">Category</label>
                     <select
@@ -83,6 +89,7 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
             </div>
 
             <div className="form-row">
+                {/* Amount Input */}
                 <div className="form-group">
                     <label htmlFor="amount">Amount</label>
                     <input
@@ -98,6 +105,7 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
                     />
                 </div>
 
+                {/* Date Input */}
                 <div className="form-group">
                     <label htmlFor="date">Date</label>
                     <input
@@ -111,6 +119,7 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
                 </div>
             </div>
 
+            {/* Description Input */}
             <div className="form-group">
                 <label htmlFor="description">Description (Optional)</label>
                 <textarea
@@ -123,6 +132,7 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
                 />
             </div>
 
+            {/* Submit Button */}
             <button type="submit" disabled={isLoading} className="submit-button">
                 {isLoading ? "Adding..." : `Add ${type}`}
             </button>
