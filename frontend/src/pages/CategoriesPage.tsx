@@ -5,8 +5,7 @@ const CategoriesPage: React.FC = () => {
   return (
     <div className="categories-page">
       <div className="categories-header">
-
-        <div 
+        <div
           className="subtitle"
           style={{
             display: "flex",
@@ -14,7 +13,7 @@ const CategoriesPage: React.FC = () => {
             alignItems: "center",
             color: "white",
             marginBottom: "2rem",
-            fontSize: "1.2rem", 
+            fontSize: "1.2rem",
             padding: "4rem 3rem",
           }}
         >
