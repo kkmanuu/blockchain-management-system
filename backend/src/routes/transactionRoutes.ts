@@ -3,10 +3,10 @@ import { protect } from "../middleware/authMiddleware";
 import { validateRequest } from "../middleware/validateRequest";
 import { transactionSchema } from "../validators/transactionValidators";
 import {
-    createTransaction,
-    deleteTransaction,
-    getTransactions,
-    getTransactionStats,
+  createTransaction,
+  deleteTransaction,
+  getTransactions,
+  getTransactionStats,
 } from "../controllers/transactionController";
 
 const router = Router();
