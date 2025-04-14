@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { protect } from "../middleware/authMiddleware";
 import {
-    createCategory,
-    deleteCategory,
-    getCategories,
-    updateCategory,
+  createCategory,
+  deleteCategory,
+  getCategories,
+  updateCategory,
 } from "../controllers/categoryController";
 import { validateRequest } from "../middleware/validateRequest";
 import { categorySchema } from "../validators/categoryValidators";
