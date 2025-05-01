@@ -51,8 +51,8 @@ export const Header: React.FC = () => {
     <header
       className="header"
       style={{
-        backgroundColor: themes[theme].headerColor, // Header background color
-        color: "white", // Header text color
+        backgroundColor: themes[theme].headerColor, 
+        color: "white", 
         padding: "1rem 2rem", // Increased horizontal padding
         width: "100%",
         position: "fixed",
@@ -141,6 +141,7 @@ export const Header: React.FC = () => {
             </>
           )}
         </nav>
+
 
         {/* Theme Switcher with FaPalette icon */}
         <div

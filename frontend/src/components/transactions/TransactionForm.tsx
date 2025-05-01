@@ -88,6 +88,7 @@ export const TransactionForm: React.FC<TransactionFormProps> = ({
         </div>
       </div>
 
+
       <div className="form-row">
         {/* Amount Input */}
         <div className="form-group">
