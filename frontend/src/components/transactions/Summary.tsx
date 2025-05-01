@@ -41,6 +41,7 @@ export const Summary: React.FC<SummaryProps> = ({ transactions }) => {
                 <p className="amount">{formatAmount(expenses)}</p>
             </div>
 
+
             {/* Display account balance with conditional styling */}
             <div className="summary-card balance">
                 <h3>Balance</h3>
