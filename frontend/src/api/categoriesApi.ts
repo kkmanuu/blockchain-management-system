@@ -26,3 +26,4 @@ export const updateCategory = async (
 export const deleteCategory = async (id: string): Promise<void> => {
   await axiosInstance.delete(`/categories/${id}`);
 };
+
