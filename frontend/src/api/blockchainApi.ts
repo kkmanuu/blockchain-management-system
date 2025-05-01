@@ -8,7 +8,7 @@ export const fetchBlockchainStats = async () => {
         walletBalance: 0.5, // User's wallet balance in BTC
         pendingTransactions: 12, // Pending transactions
         networkFees: 15, // Average network fees in satoshis per byte
-        blockHeight: 789012, // Current block height
+        blockHeight: 789012,
       });
     }, 1000); // Simulate a 1-second delay
   });
