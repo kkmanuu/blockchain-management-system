@@ -1,7 +1,7 @@
 # Finance Tracker Application
 
 A full-stack finance tracking application built with TypeScript, React, Node.js, and MongoDB.
-
+ 
 ## Features
 
 - 🔒 **User Authentication**
